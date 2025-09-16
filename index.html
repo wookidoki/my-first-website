@@ -3,252 +3,366 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>바른상품권 - 업계 1위 상품권 현금화 | 최대 95% 즉시입금</title>
+    <title>바른상품권 - 투명하고 신뢰할 수 있는 상품권 현금화</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- 실시간 알림 팝업 -->
-    <div class="live-notification" id="liveNotification" style="display: none;">
-        <div class="live-notification-header">
-            <div class="live-dot"></div>
-            <span class="live-text">실시간 거래</span>
-        </div>
-        <div class="live-content" id="notificationContent"></div>
-    </div>
-
     <!-- 헤더 -->
-    <header>
-        <div class="header-top">
-            ⚡ 오늘만! 신규고객 최대 95% 환율 적용 | 24시간 즉시 상담 가능
-        </div>
-        <div class="header-main">
+    <header class="header">
+        <nav class="nav-container">
             <div class="logo">
-                <img src="logo.png" alt="바른상품권" class="logo-img">
-                <span class="logo-badge">인증업체</span>
+                <img src="logo.svg" alt="바른상품권" class="logo-img">
+                <span class="logo-text">바른상품권</span>
             </div>
-            <a href="#quick-contact" class="header-cta">
-                <span>📞</span> 즉시 상담
-            </a>
-        </div>
+            <div class="nav-menu">
+                <a href="#service" class="nav-link">서비스</a>
+                <a href="#rates" class="nav-link">환율</a>
+                <a href="#process" class="nav-link">이용방법</a>
+                <a href="#reviews" class="nav-link">고객후기</a>
+            </div>
+            <a href="#contact" class="nav-cta">상담하기</a>
+        </nav>
     </header>
 
     <!-- 히어로 섹션 -->
     <section class="hero">
-        <div class="trust-badge">✓ 정부인증 안전거래</div>
-        <div class="hero-container">
-            <h1 class="hero-title">
-                상품권 현금화 <span>업계 1위</span><br>
-                최대 95% 즉시 입금
-            </h1>
-            <p class="hero-subtitle">
-                10년 무사고 | 누적 거래 50만건 | 5분 입금 보장
-            </p>
-
-            <div class="hero-image">
-                <img src="hero-image.jpg" alt="상품권 현금화">
-            </div>
-
-            <div class="urgency-banner">
-                ⏰ 긴급공지: 오늘 신청시 추가 2% 우대 환율! 선착순 100명 한정 (잔여: <span id="remainingSlots">23</span>명)
-            </div>
-
-            <!-- 실시간 카운터 -->
-            <div class="live-stats">
-                <div class="stat-box">
-                    <div class="stat-number">
-                        <span class="counter" id="todayCount">127</span>명
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">10년 연속 고객만족 1위</div>
+                    <h1 class="hero-title">
+                        상품권 현금화,<br>
+                        <span class="highlight">투명하고 정직하게</span>
+                    </h1>
+                    <p class="hero-description">
+                        업계 최고 95% 환율, 5분 내 입금 완료<br>
+                        50만 고객이 선택한 안전한 거래
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn-primary">지금 시작하기</a>
+                        <a href="#rates" class="btn-secondary">환율 확인</a>
                     </div>
-                    <div class="stat-label">오늘 이용고객</div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-value">95%</div>
+                            <div class="stat-label">최고 환율</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">5분</div>
+                            <div class="stat-label">평균 처리시간</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">50만+</div>
+                            <div class="stat-label">누적 고객</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat-box">
-                    <div class="stat-number">
-                        <span class="counter" id="currentUsers">43</span>명
-                    </div>
-                    <div class="stat-label">현재 상담중</div>
+                <div class="hero-visual">
+                    <img src="hero-mockup.png" alt="바른상품권 서비스" class="hero-image">
                 </div>
-                <div class="stat-box">
-                    <div class="stat-number">
-                        <span class="counter" id="totalAmount">8.7</span>억
+            </div>
+        </div>
+    </section>
+
+    <!-- 서비스 특징 -->
+    <section id="service" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">왜 바른상품권인가요?</h2>
+                <p class="section-subtitle">
+                    고객님의 소중한 자산을 안전하고 투명하게 관리합니다
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="icon-secure.svg" alt="보안">
                     </div>
-                    <div class="stat-label">오늘 거래금액</div>
+                    <h3 class="feature-title">은행 수준의 보안</h3>
+                    <p class="feature-description">
+                        256bit SSL 암호화와 금융감독원 등록으로
+                        안전한 거래를 보장합니다
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="icon-fast.svg" alt="속도">
+                    </div>
+                    <h3 class="feature-title">5분 즉시 입금</h3>
+                    <p class="feature-description">
+                        자동화 시스템으로 확인 즉시
+                        고객님 계좌로 입금됩니다
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="icon-rate.svg" alt="환율">
+                    </div>
+                    <h3 class="feature-title">투명한 환율 정책</h3>
+                    <p class="feature-description">
+                        실시간 환율 공개, 숨겨진 수수료 없이
+                        정직하게 거래합니다
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="icon-support.svg" alt="지원">
+                    </div>
+                    <h3 class="feature-title">24시간 고객지원</h3>
+                    <p class="feature-description">
+                        언제든 편하게 문의하실 수 있도록
+                        365일 상담사가 대기합니다
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 환율 정보 -->
+    <section id="rates" class="rates">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">실시간 매입 환율</h2>
+                <p class="section-subtitle">
+                    2024년 12월 27일 오후 3:30 기준
+                </p>
+            </div>
+            <div class="rates-grid">
+                <div class="rate-card premium">
+                    <div class="rate-badge">BEST</div>
+                    <div class="rate-icon">
+                        <img src="icon-department.svg" alt="백화점상품권">
+                    </div>
+                    <h3 class="rate-title">백화점상품권</h3>
+                    <div class="rate-value">95%</div>
+                    <p class="rate-subtitle">신세계, 롯데, 현대</p>
+                    <a href="#contact" class="rate-cta">매입 신청</a>
+                </div>
+                <div class="rate-card">
+                    <div class="rate-icon">
+                        <img src="icon-culture.svg" alt="문화상품권">
+                    </div>
+                    <h3 class="rate-title">문화상품권</h3>
+                    <div class="rate-value">93%</div>
+                    <p class="rate-subtitle">컬쳐랜드, 해피머니</p>
+                    <a href="#contact" class="rate-cta">매입 신청</a>
+                </div>
+                <div class="rate-card">
+                    <div class="rate-icon">
+                        <img src="icon-mobile.svg" alt="모바일상품권">
+                    </div>
+                    <h3 class="rate-title">모바일상품권</h3>
+                    <div class="rate-value">92%</div>
+                    <p class="rate-subtitle">스마트문상, 도서문화</p>
+                    <a href="#contact" class="rate-cta">매입 신청</a>
+                </div>
+                <div class="rate-card">
+                    <div class="rate-icon">
+                        <img src="icon-global.svg" alt="해외상품권">
+                    </div>
+                    <h3 class="rate-title">해외상품권</h3>
+                    <div class="rate-value">90%</div>
+                    <p class="rate-subtitle">구글, 아마존, 애플</p>
+                    <a href="#contact" class="rate-cta">매입 신청</a>
+                </div>
+            </div>
+            <div class="rates-notice">
+                <p>💡 10만원 이상 거래 시 추가 우대 환율 적용</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 이용 프로세스 -->
+    <section id="process" class="process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">간단한 이용 방법</h2>
+                <p class="section-subtitle">
+                    복잡한 절차 없이 4단계로 완료됩니다
+                </p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>상담 신청</h3>
+                        <p>카카오톡 또는 전화로 간편하게 신청</p>
+                    </div>
+                </div>
+                <div class="process-line"></div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>상품권 확인</h3>
+                        <p>보유하신 상품권 사진 전송</p>
+                    </div>
+                </div>
+                <div class="process-line"></div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>환율 안내</h3>
+                        <p>실시간 최고 환율 적용 금액 확인</p>
+                    </div>
+                </div>
+                <div class="process-line"></div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>즉시 입금</h3>
+                        <p>확인 후 5분 내 계좌 입금 완료</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 고객 후기 -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">고객님들의 이야기</h2>
+                <p class="section-subtitle">
+                    실제 이용하신 고객님들의 솔직한 후기입니다
+                </p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-rating">★★★★★</div>
+                    <p class="review-text">
+                        "다른 업체들과 비교해봤는데 환율이 가장 높았어요. 
+                        무엇보다 5분만에 입금되어서 놀랐습니다."
+                    </p>
+                    <div class="review-author">
+                        <img src="avatar1.jpg" alt="김민수" class="author-avatar">
+                        <div class="author-info">
+                            <div class="author-name">김민수</div>
+                            <div class="author-meta">백화점상품권 100만원</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-rating">★★★★★</div>
+                    <p class="review-text">
+                        "처음이라 걱정했는데 상담사분이 친절하게 설명해주셔서 
+                        안심하고 거래할 수 있었습니다."
+                    </p>
+                    <div class="review-author">
+                        <img src="avatar2.jpg" alt="이서연" class="author-avatar">
+                        <div class="author-info">
+                            <div class="author-name">이서연</div>
+                            <div class="author-meta">문화상품권 50만원</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-rating">★★★★★</div>
+                    <p class="review-text">
+                        "10년째 이용중입니다. 항상 믿고 거래할 수 있어서 
+                        주변에도 추천하고 있어요."
+                    </p>
+                    <div class="review-author">
+                        <img src="avatar3.jpg" alt="박준영" class="author-avatar">
+                        <div class="author-info">
+                            <div class="author-name">박준영</div>
+                            <div class="author-meta">VIP 고객</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 신뢰 지표 -->
+    <section class="trust">
+        <div class="container">
+            <div class="trust-content">
+                <div class="trust-item">
+                    <img src="cert1.png" alt="사업자등록" class="trust-logo">
+                    <p>정식 사업자 등록</p>
+                </div>
+                <div class="trust-item">
+                    <img src="cert2.png" alt="SSL인증" class="trust-logo">
+                    <p>SSL 보안 인증</p>
+                </div>
+                <div class="trust-item">
+                    <img src="cert3.png" alt="금융감독원" class="trust-logo">
+                    <p>금융감독원 등록</p>
+                </div>
+                <div class="trust-item">
+                    <img src="cert4.png" alt="소비자보호" class="trust-logo">
+                    <p>소비자보호 인증</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA 섹션 -->
-    <section class="cta-section" id="quick-contact">
-        <h2 class="cta-title">💬 지금 바로 최고가 확인하세요!</h2>
-        <div class="cta-buttons">
-            <a href="https://open.kakao.com/YOUR_LINK" class="cta-btn btn-kakao">
-                <span>💬</span> 카카오톡 상담
-            </a>
-            <a href="https://t.me/YOUR_LINK" class="cta-btn btn-telegram">
-                <span>✈️</span> 텔레그램 상담
-            </a>
-            <a href="tel:010-0000-0000" class="cta-btn btn-phone">
-                <span>📞</span> 전화 상담 (24시간)
-            </a>
-        </div>
-    </section>
-
-    <!-- 실시간 매입 현황 -->
-    <section class="live-trades">
-        <div class="live-trades-header">
-            <div class="live-indicator">
-                <div class="pulse-dot"></div>
-                LIVE 실시간 거래현황
-            </div>
-        </div>
-        <div class="trade-list" id="tradeList">
-            <!-- 동적으로 생성됨 -->
-        </div>
-    </section>
-
-    <!-- 환율표 -->
-    <section class="rate-section">
-        <div class="rate-header">
-            <h2 class="rate-title">💰 실시간 최고가 매입 환율</h2>
-            <p class="rate-subtitle">업계 최고 환율로 매입해드립니다</p>
-            <span class="rate-update">✓ 실시간 업데이트</span>
-        </div>
-        <div class="rate-grid">
-            <div class="rate-card">
-                <span class="rate-card-best">BEST</span>
-                <img src="department-store.jpg" alt="백화점상품권" class="rate-image">
-                <div class="rate-name">백화점 상품권</div>
-                <div class="rate-percentage">95%</div>
-                <div class="rate-description">신세계, 롯데, 현대</div>
-            </div>
-            <div class="rate-card">
-                <img src="culture.jpg" alt="문화상품권" class="rate-image">
-                <div class="rate-name">문화상품권</div>
-                <div class="rate-percentage">93%</div>
-                <div class="rate-description">도서, 문화생활</div>
-            </div>
-            <div class="rate-card">
-                <img src="happymoney.jpg" alt="해피머니" class="rate-image">
-                <div class="rate-name">해피머니</div>
-                <div class="rate-percentage">92%</div>
-                <div class="rate-description">모바일 상품권</div>
-            </div>
-            <div class="rate-card">
-                <img src="google.jpg" alt="구글기프트" class="rate-image">
-                <div class="rate-name">구글기프트</div>
-                <div class="rate-percentage">90%</div>
-                <div class="rate-description">구글 플레이</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 고객 후기 -->
-    <section class="reviews-section">
-        <div class="reviews-header">
-            <h2 class="reviews-title">⭐ 실제 이용 고객 후기</h2>
-            <div class="review-stats">
-                <div class="review-rating">
-                    <span class="stars">⭐⭐⭐⭐⭐</span>
-                    <span>4.9</span>
-                </div>
-                <span class="review-count">총 12,847개의 리뷰</span>
-            </div>
-        </div>
-        <div class="reviews-grid" id="reviewsGrid">
-            <!-- 리뷰 카드들 -->
-        </div>
-    </section>
-
-    <!-- 프로세스 -->
-    <section class="process-section">
-        <div class="process-header">
-            <h2 class="process-title">📋 간단한 4단계 프로세스</h2>
-        </div>
-        <div class="process-grid">
-            <div class="process-step">
-                <div class="step-number">1</div>
-                <div class="step-icon">📞</div>
-                <h3 class="step-title">상담 신청</h3>
-                <p class="step-description">
-                    카카오톡, 텔레그램, 전화 중 편한 방법으로 연락주세요
+    <section id="contact" class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">지금 바로 시작하세요</h2>
+                <p class="cta-description">
+                    전문 상담사가 친절하게 안내해드립니다
                 </p>
-                <span class="step-time">⏱️ 1분</span>
-            </div>
-            <div class="process-step">
-                <div class="step-number">2</div>
-                <div class="step-icon">📸</div>
-                <h3 class="step-title">상품권 확인</h3>
-                <p class="step-description">
-                    상품권 사진을 보내주시면 즉시 확인해드립니다
+                <div class="cta-buttons">
+                    <a href="https://open.kakao.com/YOUR_LINK" class="cta-button kakao">
+                        <img src="icon-kakao.svg" alt="카카오톡">
+                        카카오톡 상담
+                    </a>
+                    <a href="tel:010-0000-0000" class="cta-button phone">
+                        <img src="icon-phone.svg" alt="전화">
+                        전화 상담
+                    </a>
+                </div>
+                <p class="cta-info">
+                    평일 09:00 - 22:00 | 주말 10:00 - 20:00
                 </p>
-                <span class="step-time">⏱️ 2분</span>
-            </div>
-            <div class="process-step">
-                <div class="step-number">3</div>
-                <div class="step-icon">💰</div>
-                <h3 class="step-title">최고가 안내</h3>
-                <p class="step-description">
-                    업계 최고 환율로 정확한 금액을 안내드립니다
-                </p>
-                <span class="step-time">⏱️ 1분</span>
-            </div>
-            <div class="process-step">
-                <div class="step-number">4</div>
-                <div class="step-icon">✅</div>
-                <h3 class="step-title">즉시 입금</h3>
-                <p class="step-description">
-                    확인 즉시 고객님 계좌로 안전하게 입금됩니다
-                </p>
-                <span class="step-time">⏱️ 1분</span>
             </div>
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="faq-section">
-        <div class="faq-header">
-            <h2 class="faq-title">❓ 자주 묻는 질문</h2>
-        </div>
-        <div class="faq-grid">
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>어떤 상품권을 매입하나요?</span>
-                    <span class="faq-arrow">▼</span>
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="logo.svg" alt="바른상품권" class="footer-logo">
+                    <p class="footer-tagline">믿을 수 있는 상품권 현금화 서비스</p>
                 </div>
-                <div class="faq-answer">
-                    백화점상품권(신세계, 롯데, 현대), 문화상품권, 해피머니, 컬쳐랜드, 
-                    구글기프트카드, 스마트문상 등 모든 종류의 상품권을 매입합니다.
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>서비스</h4>
+                        <a href="#">백화점상품권</a>
+                        <a href="#">문화상품권</a>
+                        <a href="#">모바일상품권</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>회사</h4>
+                        <a href="#">회사소개</a>
+                        <a href="#">이용약관</a>
+                        <a href="#">개인정보처리방침</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>고객센터</h4>
+                        <p>010-0000-0000</p>
+                        <p>평일 09:00 - 22:00</p>
+                        <p>주말 10:00 - 20:00</p>
+                    </div>
                 </div>
             </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>입금까지 얼마나 걸리나요?</span>
-                    <span class="faq-arrow">▼</span>
-                </div>
-                <div class="faq-answer">
-                    상품권 확인 후 5분 이내 입금을 원칙으로 합니다. 
-                    은행 점검시간(23:30~00:30)을 제외하고는 24시간 즉시 입금 가능합니다.
-                </div>
+            <div class="footer-bottom">
+                <p>© 2024 바른상품권. All rights reserved.</p>
+                <p>사업자등록번호: 000-00-00000 | 대표: 홍길동</p>
             </div>
         </div>
-    </section>
+    </footer>
 
-    <!-- 하단 CTA -->
-    <section class="bottom-cta">
-        <div class="bottom-cta-content">
-            <h2>지금 바로 최고가로 현금화하세요!</h2>
-            <p>365일 24시간 언제든지 상담 가능합니다</p>
-            <a href="#quick-contact" class="final-cta-btn">
-                💬 즉시 상담 시작하기
-            </a>
-        </div>
-    </section>
-
-    <!-- 플로팅 버튼 -->
-    <div class="floating-elements">
-        <a href="https://open.kakao.com/YOUR_LINK" class="floating-btn btn-float-kakao">💬</a>
-        <a href="https://t.me/YOUR_LINK" class="floating-btn btn-float-telegram">✈️</a>
-        <a href="tel:010-0000-0000" class="floating-btn btn-float-phone">📞</a>
-        <a href="#" class="floating-btn btn-float-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑</a>
+    <!-- 플로팅 버튼 (심플하게) -->
+    <div class="floating-buttons">
+        <a href="https://open.kakao.com/YOUR_LINK" class="floating-btn">
+            <img src="icon-kakao-white.svg" alt="카카오톡">
+        </a>
     </div>
 
     <script src="script.js"></script>
