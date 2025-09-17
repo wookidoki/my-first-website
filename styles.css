@@ -32,6 +32,13 @@ body {
     padding: 0 20px;
 }
 
+/* 모바일에서 좌우 여백 조정 */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+}
+
 /* 헤더 - 심플하고 명확 */
 .header {
     position: fixed;
@@ -772,73 +779,443 @@ section {
     font-size: 24px;
 }
 
-/* 반응형 - 큰 화면 위주 */
-@media (max-width: 1024px) {
+/* 모바일 최적화 - 완전 개선 */
+@media (max-width: 768px) {
+    /* 헤더 모바일 */
+    .header-container {
+        padding: 10px 15px;
+    }
+    
+    .logo-text {
+        font-size: 20px;
+    }
+    
+    .header-phone {
+        display: none; /* 모바일에서 전화번호 숨김 */
+    }
+    
+    .header-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    /* 히어로 모바일 */
+    .hero {
+        margin-top: 65px;
+        padding: 30px 0;
+    }
+    
     .hero-content {
         grid-template-columns: 1fr;
-        text-align: center;
     }
     
-    .hero-buttons {
-        justify-content: center;
-    }
-    
-    .service-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .feature-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .cta-boxes {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-@media (max-width: 768px) {
     .hero-title {
-        font-size: 32px;
+        font-size: 28px;
+        line-height: 1.4;
+        text-align: left;
     }
     
-    .service-grid,
-    .review-grid {
-        grid-template-columns: 1fr;
+    .hero-label {
+        font-size: 12px;
+        padding: 4px 12px;
+        margin-bottom: 15px;
     }
     
-    .process-steps {
-        flex-direction: column;
-        gap: 30px;
-    }
-    
-    .step-arrow {
-        transform: rotate(90deg);
+    /* 메인 환율 모바일 */
+    .main-rates {
+        gap: 10px;
+        padding: 15px 10px;
         margin: 20px 0;
     }
     
-    .feature-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
+    .rate-item {
+        padding: 12px 8px;
     }
     
+    .rate-label {
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+    
+    .rate-value {
+        font-size: 18px;
+    }
+    
+    /* 실시간 현황 모바일 */
+    .live-stats {
+        gap: 0;
+        padding: 15px 0;
+        justify-content: space-between;
+    }
+    
+    .stat-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        flex: 1;
+    }
+    
+    .stat-number {
+        font-size: 22px;
+        margin-bottom: 3px;
+    }
+    
+    .stat-text {
+        font-size: 11px;
+        white-space: nowrap;
+    }
+    
+    .hero-description {
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+    
+    /* 버튼 모바일 */
     .hero-buttons {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
     }
     
     .btn-primary,
     .btn-kakao {
         width: 100%;
         justify-content: center;
+        padding: 16px;
+        font-size: 16px;
+    }
+    
+    .btn-icon {
+        font-size: 20px;
+    }
+    
+    .hero-image {
+        margin-top: 30px;
+    }
+    
+    .hero-image img {
+        border-radius: 15px;
+    }
+    
+    /* 섹션 공통 모바일 */
+    section {
+        padding: 50px 0;
+    }
+    
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+    
+    .section-subtitle {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+    
+    /* 서비스 카드 모바일 */
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .service-card {
+        padding: 25px 20px;
+    }
+    
+    .service-icon {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+    
+    .service-card h3 {
+        font-size: 18px;
+    }
+    
+    .service-rate {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+    
+    .service-rate span {
+        font-size: 24px;
+    }
+    
+    .service-list {
+        margin-bottom: 20px;
+    }
+    
+    .service-list li {
+        font-size: 13px;
+        padding: 6px 0 6px 18px;
+    }
+    
+    .service-btn {
+        width: 100%;
+        padding: 14px;
+    }
+    
+    /* 수수료 테이블 모바일 */
+    .rate-table {
+        margin-bottom: 20px;
+    }
+    
+    .rate-table table {
+        font-size: 13px;
+    }
+    
+    .rate-table th {
+        padding: 12px 8px;
+        font-size: 13px;
+    }
+    
+    .rate-table td {
+        padding: 12px 8px;
+        font-size: 13px;
+    }
+    
+    .rate-best {
+        font-size: 15px;
+    }
+    
+    .rate-notice {
+        padding: 15px;
+    }
+    
+    .rate-notice p {
+        font-size: 14px;
+    }
+    
+    /* 프로세스 모바일 */
+    .process-steps {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .step-circle {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    
+    .step h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+    
+    .step p {
+        font-size: 14px;
+    }
+    
+    .step-arrow {
+        transform: rotate(90deg);
+        margin: 10px 0;
+        font-size: 24px;
+    }
+    
+    /* 특징 그리드 모바일 */
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .feature {
+        padding: 20px 10px;
+    }
+    
+    .feature-icon {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+    
+    .feature h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+    
+    .feature p {
+        font-size: 13px;
+    }
+    
+    /* FAQ 모바일 */
+    .faq-list {
+        padding: 0;
+    }
+    
+    .faq-item {
+        margin-bottom: 10px;
+    }
+    
+    .faq-question {
+        padding: 18px 15px;
+        font-size: 15px;
+    }
+    
+    .faq-toggle {
+        font-size: 20px;
+    }
+    
+    .faq-answer {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+    
+    .faq-item.active .faq-answer {
+        padding: 0 15px 18px;
+    }
+    
+    /* 리뷰 모바일 */
+    .review-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .review-card {
+        padding: 25px 20px;
+    }
+    
+    .review-stars {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+    
+    .review-text {
+        font-size: 14px;
+        line-height: 1.7;
+        min-height: auto;
+        margin-bottom: 15px;
+    }
+    
+    .review-author strong {
+        font-size: 15px;
+    }
+    
+    .review-author span {
+        font-size: 13px;
+    }
+    
+    /* CTA 모바일 */
+    .final-cta {
+        padding: 50px 0;
+    }
+    
+    .cta-content h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+    
+    .cta-content p {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    
+    .cta-boxes {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+    
+    .cta-box {
+        padding: 20px;
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .cta-icon {
+        font-size: 36px;
+    }
+    
+    .cta-info strong {
+        font-size: 16px;
+    }
+    
+    .cta-info span {
+        font-size: 18px;
+    }
+    
+    .business-info {
+        font-size: 12px;
+        padding-top: 20px;
+    }
+    
+    /* 플로팅 버튼 모바일 */
+    .floating-call {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .float-btn {
+        padding: 12px 20px;
+        font-size: 16px;
+        border-radius: 40px;
+    }
+    
+    .float-icon {
+        font-size: 20px;
+    }
+}
+
+/* 아주 작은 화면 (iPhone SE 등) */
+@media (max-width: 375px) {
+    .hero-title {
+        font-size: 24px;
+    }
+    
+    .main-rates {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .rate-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 15px;
+    }
+    
+    .rate-label {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+    
+    .rate-value {
+        font-size: 20px;
+    }
+    
+    .feature-grid {
+        grid-template-columns: 1fr;
     }
     
     .rate-table {
-        font-size: 14px;
+        font-size: 12px;
     }
     
     .rate-table th,
     .rate-table td {
-        padding: 12px 10px;
+        padding: 10px 5px;
+        font-size: 12px;
+    }
+}
+
+/* 가로 모드 최적화 */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        padding: 20px 0;
+    }
+    
+    .hero-title {
+        font-size: 24px;
+    }
+    
+    section {
+        padding: 40px 0;
+    }
+    
+    .main-rates {
+        margin: 15px 0;
+    }
+    
+    .live-stats {
+        padding: 10px 0;
     }
 }
