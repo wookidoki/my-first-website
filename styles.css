@@ -307,8 +307,10 @@ section {
 }
 
 .service-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    /* [수정] Grid 대신 Flexbox를 사용하여 아이템들을 유연하게 중앙 정렬합니다. */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* 화면 크기가 작아지면 카드가 다음 줄로 넘어가도록 설정 */
     gap: 25px;
 }
 
@@ -320,6 +322,11 @@ section {
     position: relative;
     border: 2px solid var(--border);
     transition: all 0.3s;
+    
+    /* [추가] 카드들의 너비를 유연하게 조절하고, Flexbox 컨테이너로 만듭니다. */
+    width: 280px; /* 카드의 너비를 고정하여 일관된 레이아웃을 유지 */
+    display: flex;
+    flex-direction: column; /* 카드 내부 요소들을 세로로 정렬 */
 }
 
 .service-card:hover {
@@ -400,7 +407,11 @@ section {
     font-weight: bold;
     display: inline-block;
     transition: all 0.3s;
+    
+    /* [추가] 버튼이 항상 카드 맨 아래에 위치하도록 자동 마진을 추가합니다. */
+    margin-top: auto;
 }
+
 
 .service-btn:hover {
     background: #1650DD;
@@ -747,7 +758,51 @@ section {
     opacity: 0.8;
 }
 
-/* 플로팅 버튼 - 카톡 우선 */
+/* 실시간 알림 팝업 */
+.live-popup {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    z-index: 9999;
+    display: none;
+    border-left: 4px solid var(--secondary);
+    animation: slideInRight 0.5s ease;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.live-popup-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--secondary);
+    border-radius: 50%;
+    animation: blink 1s infinite;
+}
+
+.live-popup-text {
+    font-weight: bold;
+    color: var(--primary);
+}
 .floating-call {
     position: fixed;
     bottom: 30px;
@@ -1218,4 +1273,24 @@ section {
     .live-stats {
         padding: 10px 0;
     }
+
+/* styles.css 파일 맨 아래에 추가 */
+
+/* [추가 제안] 신뢰도 및 인터랙션 향상 */
+.feature-icon {
+    font-size: 56px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease; /* 부드러운 전환 효과 추가 */
+}
+
+.feature:hover .feature-icon {
+    transform: scale(1.15); /* 마우스를 올리면 아이콘이 커지는 효과 */
+}
+
+@media (max-width: 768px) {
+    /* 화면이 좁은 모바일에서는 실시간 알림 팝업을 숨겨서 화면 가림을 방지 */
+    .live-popup {
+        display: none !important;
+    }
+}
 }
