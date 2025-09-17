@@ -747,7 +747,7 @@ section {
     opacity: 0.8;
 }
 
-/* 플로팅 버튼 - 크고 명확하게 */
+/* 플로팅 버튼 - 카톡 우선 */
 .floating-call {
     position: fixed;
     bottom: 30px;
@@ -756,15 +756,15 @@ section {
 }
 
 .float-btn {
-    background: var(--primary);
-    color: var(--white);
+    background: var(--kakao);
+    color: #3C1E1E;
     padding: 15px 25px;
     border-radius: 50px;
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 5px 20px rgba(30, 94, 255, 0.5);
+    box-shadow: 0 5px 20px rgba(254, 229, 0, 0.5);
     transition: all 0.3s;
     font-size: 18px;
     font-weight: bold;
@@ -772,7 +772,7 @@ section {
 
 .float-btn:hover {
     transform: scale(1.1);
-    box-shadow: 0 8px 30px rgba(30, 94, 255, 0.6);
+    box-shadow: 0 8px 30px rgba(254, 229, 0, 0.6);
 }
 
 .float-icon {
