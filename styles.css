@@ -473,31 +473,32 @@ section {
     color: var(--dark);
 }
 
-/* 이용 방법 - 반응형 개선 */
+/* 이용 방법 - 완전히 개선된 레이아웃 */
 .process {
     background: var(--light-gray);
 }
 
 .process-steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: clamp(1.5rem, 4vw, 2rem);
-    align-items: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: clamp(1rem, 3vw, 2rem);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.step-item {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 200px;
+    max-width: 250px;
 }
 
 .step {
     text-align: center;
-    position: relative;
-}
-
-.step:not(:last-child)::after {
-    content: "→";
-    position: absolute;
-    top: 2rem;
-    right: -50%;
-    font-size: var(--font-2xl);
-    color: var(--primary);
-    z-index: 1;
+    flex: 1;
 }
 
 .step-circle {
@@ -513,6 +514,12 @@ section {
     font-size: var(--font-2xl);
     font-weight: bold;
     box-shadow: 0 5px 15px rgba(30, 94, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.step:hover .step-circle {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(30, 94, 255, 0.4);
 }
 
 .step h3 {
@@ -525,6 +532,93 @@ section {
     font-size: var(--font-sm);
     color: var(--gray);
     line-height: 1.6;
+}
+
+.step-arrow {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: var(--primary);
+    margin: 0 clamp(0.5rem, 2vw, 1rem);
+    font-weight: bold;
+    margin-top: -3rem;
+    flex-shrink: 0;
+}
+
+.desktop-only {
+    display: block;
+}
+
+/* 태블릿에서의 프로세스 스텝 */
+@media (max-width: 1023px) and (min-width: 768px) {
+    .process-steps {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 2rem;
+        max-width: 600px;
+    }
+    
+    .step-item:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .step-item:nth-child(2) {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    
+    .step-item:nth-child(3) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    .step-item:nth-child(4) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+    
+    .step-item {
+        justify-content: center;
+    }
+    
+    .desktop-only {
+        display: none;
+    }
+    
+    .step-item:nth-child(1)::after {
+        content: "→";
+        position: absolute;
+        right: -1rem;
+        top: 2rem;
+        font-size: 1.5rem;
+        color: var(--primary);
+        font-weight: bold;
+    }
+    
+    .step-item:nth-child(2)::after {
+        content: "↓";
+        position: absolute;
+        bottom: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.5rem;
+        color: var(--primary);
+        font-weight: bold;
+    }
+    
+    .step-item:nth-child(3)::after {
+        content: "→";
+        position: absolute;
+        right: -1rem;
+        top: 2rem;
+        font-size: 1.5rem;
+        color: var(--primary);
+        font-weight: bold;
+    }
+    
+    .step-item {
+        position: relative;
+    }
 }
 
 /* 특징 그리드 - 완전히 개선된 반응형 */
@@ -979,18 +1073,94 @@ section {
         grid-template-columns: 1fr;
     }
     
+    /* 모바일 프로세스 스텝 - 2x2 그리드 */
     .process-steps {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: clamp(1rem, 4vw, 1.5rem);
+        max-width: 400px;
     }
     
-    .step:not(:last-child)::after {
+    .step-item {
+        justify-content: center;
+        position: relative;
+    }
+    
+    .step-item:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .step-item:nth-child(2) {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    
+    .step-item:nth-child(3) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    .step-item:nth-child(4) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+    
+    .desktop-only {
+        display: none;
+    }
+    
+    /* 모바일 화살표 */
+    .step-item:nth-child(1)::after {
+        content: "→";
+        position: absolute;
+        right: -0.5rem;
+        top: 1.5rem;
+        font-size: 1.25rem;
+        color: var(--primary);
+        font-weight: bold;
+        z-index: 1;
+    }
+    
+    .step-item:nth-child(2)::after {
         content: "↓";
-        position: static;
-        display: block;
-        text-align: center;
-        margin: 1rem 0;
-        font-size: 2rem;
+        position: absolute;
+        bottom: -0.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.25rem;
+        color: var(--primary);
+        font-weight: bold;
+        z-index: 1;
+    }
+    
+    .step-item:nth-child(3)::after {
+        content: "→";
+        position: absolute;
+        right: -0.5rem;
+        top: 1.5rem;
+        font-size: 1.25rem;
+        color: var(--primary);
+        font-weight: bold;
+        z-index: 1;
+    }
+    
+    .step-circle {
+        width: clamp(3rem, 12vw, 4rem);
+        height: clamp(3rem, 12vw, 4rem);
+        font-size: clamp(1.25rem, 4vw, 1.5rem);
+        margin-bottom: clamp(0.75rem, 3vw, 1rem);
+    }
+    
+    .step h3 {
+        font-size: clamp(0.875rem, 3.5vw, 1rem);
+        margin-bottom: clamp(0.25rem, 2vw, 0.5rem);
+    }
+    
+    .step p {
+        font-size: clamp(0.75rem, 3vw, 0.875rem);
+        line-height: 1.4;
     }
     
     .feature-grid {
